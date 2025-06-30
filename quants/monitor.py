@@ -114,7 +114,7 @@ class PerformanceMonitor:
         """Main monitoring loop."""
         while self.is_running:
             try:
-                await self._collect_metrics()
+                self._collect_metrics()
                 await asyncio.sleep(self.sample_interval)
             except asyncio.CancelledError:
                 break
